@@ -5,17 +5,32 @@ Minimal pipeline to download data (manual), preprocess faces, train a model, and
 ## Requirements
 
 - Python 3.9+
-- macOS Apple Silicon recommended (MPS). CPU also works.
-- for cuda, the code is not supported
+- CUDA (NVIDIA) or Apple Silicon (MPS) or CPU
 
 ## Setup
 
 ```bash
-cd /Users/akashaaprasad/Documents/DeepFake\ Engine_v1/deepfake-detection
+cd /Users/akashaaprasad/Documents/DeepFake\ Engine_v2
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+On Windows:
+
+```bat
+cd C:\path\to\DeepFake Engine_v2
+python -m venv .venv
+.venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+For CUDA, install a CUDA-enabled PyTorch build that matches your driver/toolkit:
+
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ## Data Download
@@ -62,7 +77,7 @@ The best checkpoint is saved to:
 models/best_model.pth
 ```
 
-The training script uses Apple MPS if available; otherwise it falls back to CPU.
+The training script uses CUDA if available; otherwise it falls back to MPS or CPU.
 
 ## Inference (Single Image)
 
