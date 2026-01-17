@@ -50,6 +50,14 @@ You can run the helper instructions:
 python 1_download_data.py
 ```
 
+## Extract Frames
+
+```bash
+python 2_extract_frames.py
+```
+
+This extracts frames from the datasets for the model to be trained 
+
 ## Preprocess (Extract Faces)
 
 ```bash
