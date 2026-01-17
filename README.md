@@ -6,7 +6,7 @@ Minimal pipeline to download data (manual), preprocess faces, train a model, and
 
 - Python 3.9+
 - macOS Apple Silicon recommended (MPS). CPU also works.
-- for cuda, the code is not supported as of now
+- for cuda, the code is not supported
 
 ## Setup
 
